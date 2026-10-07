@@ -1,0 +1,23 @@
+{
+  "appId": "com.aramco.drilling.intelligence",
+  "productName": "Aramco Drilling Intelligence Platform",
+  "directories": {
+    "output": "dist-electron"
+  },
+  "files": [
+    "dist/**/*",
+    "electron/**/*"
+  ],
+  "win": {
+    "target": ["nsis", "portable"],
+    "icon": "electron/icon.ico",
+    "requestedExecutionLevel": "asInvoker"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "Aramco Drilling Intelligence"
+  }
+}

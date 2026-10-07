@@ -1,0 +1,6 @@
+{
+  "name": "Agentic AI Drilling Intelligence & Well Design Platform",
+  "description": "Enterprise drilling intelligence and autonomous well design platform with Custom Voice Cloning, 12-phase engineering workflow, Agentic Force orchestrator, and human-in-the-loop governance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,64 @@
+version: '3.8'
+
+services:
+  drilling-platform:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aramco-drilling-intelligence
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+      - AIR_GAPPED=false
+      - DATABASE_URL=postgresql://drilling_admin:SecureAramco2026@postgres:5432/drilling_intelligence
+      - LOCAL_LLM_ENDPOINT=http://ollama:11434
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - drilling-network
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: drilling-postgres-db
+    environment:
+      POSTGRES_USER: drilling_admin
+      POSTGRES_PASSWORD: SecureAramco2026
+      POSTGRES_DB: drilling_intelligence
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01_schema.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U drilling_admin -d drilling_intelligence"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+    networks:
+      - drilling-network
+
+  ollama:
+    image: ollama/ollama:latest
+    container_name: drilling-local-llm
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_models:/root/.ollama
+    restart: unless-stopped
+    networks:
+      - drilling-network
+
+volumes:
+  postgres_data:
+    driver: local
+  ollama_models:
+    driver: local
+
+networks:
+  drilling-network:
+    driver: bridge
