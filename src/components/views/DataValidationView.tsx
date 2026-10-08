@@ -81,7 +81,7 @@ export const DataValidationView: React.FC<DataValidationViewProps> = ({
             <div className="flex items-center justify-between pb-1.5 border-b border-sky-950/40">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span className="text-slate-200 font-medium">{c.title}</span>
+                <span className="text-slate-200 font-normal">{c.title}</span>
               </div>
               <span className="text-[10px] text-emerald-400 font-mono px-1.5 py-0.5 rounded bg-emerald-950/40 border border-emerald-800/40">
                 {c.status}

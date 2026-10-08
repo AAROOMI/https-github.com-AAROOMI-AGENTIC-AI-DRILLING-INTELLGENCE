@@ -96,7 +96,7 @@ start http://localhost:3000`;
         {/* Docker Deployment Container Center */}
         <div className="p-4 rounded bg-[#08101e] border border-sky-950/60 space-y-3">
           <div className="flex items-center justify-between pb-2 border-b border-sky-950/40">
-            <div className="flex items-center gap-2 text-xs text-slate-200 font-medium">
+            <div className="flex items-center gap-2 text-xs text-slate-200 font-normal">
               <Terminal className="w-4 h-4 text-sky-400" />
               <span>Client Docker Deployment Package (Dockerfile & Compose)</span>
             </div>
@@ -126,7 +126,7 @@ start http://localhost:3000`;
         {/* Windows Desktop Packaging Center */}
         <div className="p-4 rounded bg-[#08101e] border border-sky-950/60 space-y-3">
           <div className="flex items-center justify-between pb-2 border-b border-sky-950/40">
-            <div className="flex items-center gap-2 text-xs text-slate-200 font-medium">
+            <div className="flex items-center gap-2 text-xs text-slate-200 font-normal">
               <Monitor className="w-4 h-4 text-emerald-400" />
               <span>Windows Desktop Native Version (.exe / Installer)</span>
             </div>
@@ -144,7 +144,7 @@ start http://localhost:3000`;
           </p>
 
           <div className="p-3 rounded bg-slate-900/60 border border-slate-800/60 space-y-2 text-xs">
-            <div className="text-slate-200 font-medium flex items-center gap-1.5">
+            <div className="text-slate-200 font-normal flex items-center gap-1.5">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
               <span>Windows Build Specifications:</span>
             </div>
@@ -164,13 +164,13 @@ start http://localhost:3000`;
 
       {/* Air-Gapped Mode & Backend Sync Settings */}
       <div className="p-4 rounded bg-[#08101e] border border-sky-950/60 space-y-3">
-        <div className="text-xs text-slate-200 font-medium pb-2 border-b border-sky-950/40">
+        <div className="text-xs text-slate-200 font-normal pb-2 border-b border-sky-950/40">
           Security Environment & Persistence Configuration
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
           <div className="p-3 rounded bg-slate-900/60 border border-slate-800/60 space-y-2">
-            <div className="text-slate-200 font-medium">Air-Gapped Operational Mode:</div>
+            <div className="text-slate-200 font-normal">Air-Gapped Operational Mode:</div>
             <div className="text-[11px] text-slate-400">
               When active, disables all external outbound network requests. Routes all AI reasoning strictly to the built-in Local LLM.
             </div>
@@ -187,7 +187,7 @@ start http://localhost:3000`;
           </div>
 
           <div className="p-3 rounded bg-slate-900/60 border border-slate-800/60 space-y-2">
-            <div className="text-slate-200 font-medium">Firebase Backend State:</div>
+            <div className="text-slate-200 font-normal">Firebase Backend State:</div>
             <div className="text-[11px] text-slate-400">
               Project: <span className="text-emerald-400 font-mono">{fbStatus.projectId}</span>
             </div>
@@ -200,7 +200,7 @@ start http://localhost:3000`;
           </div>
 
           <div className="p-3 rounded bg-slate-900/60 border border-slate-800/60 space-y-2">
-            <div className="text-slate-200 font-medium">PostgreSQL Database:</div>
+            <div className="text-slate-200 font-normal">PostgreSQL Database:</div>
             <div className="text-[11px] text-slate-400">
               Schema: <span className="text-sky-300 font-mono">database/schema.sql (35 tables)</span>
             </div>

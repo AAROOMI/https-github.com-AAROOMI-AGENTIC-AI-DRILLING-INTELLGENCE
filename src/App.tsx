@@ -23,6 +23,7 @@ import { AgentMonitorView } from './components/views/AgentMonitorView';
 import { AdminVoiceView } from './components/views/AdminVoiceView';
 import { AdministrationView } from './components/views/AdministrationView';
 import { UserGuideView } from './components/views/UserGuideView';
+import { ThemeGuideView } from './components/views/ThemeGuideView';
 import { SYNTHETIC_ACTIVE_WELL } from './services/data/initialSyntheticData';
 import { LocalLlmGateway } from './services/llm/localLlmGateway';
 
@@ -51,6 +52,8 @@ export default function App() {
         return <UserGuideView currentLanguage={currentLanguage} onNavigate={setActiveView} />;
       case 'workflow':
         return <WorkflowView currentLanguage={currentLanguage} onNavigate={setActiveView} />;
+      case 'theme-guide':
+        return <ThemeGuideView currentLanguage={currentLanguage} />;
       case 'data-collection':
         return <DataCollectionView currentLanguage={currentLanguage} />;
       case 'data-validation':
@@ -106,6 +109,7 @@ export default function App() {
         onToggleAirGapped={handleToggleAirGapped}
         activeWellName={SYNTHETIC_ACTIVE_WELL.name}
         onOpenUserGuide={() => setActiveView('user-guide')}
+        onOpenThemeGuide={() => setActiveView('theme-guide')}
       />
 
       {/* Main Control Room Layout */}

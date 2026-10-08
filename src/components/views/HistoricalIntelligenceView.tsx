@@ -64,7 +64,7 @@ export const HistoricalIntelligenceView: React.FC<HistoricalIntelligenceViewProp
             className="p-3.5 rounded bg-[#08101e] border border-sky-950/60 space-y-2 text-xs"
           >
             <div className="flex items-center justify-between pb-1.5 border-b border-sky-950/40">
-              <span className="text-slate-200 font-medium">{les.title}</span>
+              <span className="text-slate-200 font-normal">{les.title}</span>
               <span className="text-[10px] text-amber-400 font-mono">{les.frequency}</span>
             </div>
 

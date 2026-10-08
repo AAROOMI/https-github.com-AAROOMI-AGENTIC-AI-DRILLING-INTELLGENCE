@@ -88,7 +88,7 @@ export const ApprovalCenterView: React.FC<ApprovalCenterViewProps> = ({
 
           <div className="space-y-2 text-xs">
             <div className="p-3 rounded bg-slate-900/60 border border-slate-800/60 space-y-2 text-slate-300">
-              <div className="text-slate-200 font-medium">Executive AI Recommendation:</div>
+              <div className="text-slate-200 font-normal">Executive AI Recommendation:</div>
               <p className="leading-relaxed text-[11px] text-slate-300">
                 Deploy K-2 Slim/Optimized profile with 4 casing strings (20", 13-3/8", 9-5/8", 7" Q-125 Liner).
                 Recommended mud weight is 1.36 sg (11.35 ppg) honoring Arab-D 1.28 sg pore pressure and providing 250 psi overbalance margin.

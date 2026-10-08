@@ -61,7 +61,7 @@ export const AgentMonitorView: React.FC<AgentMonitorViewProps> = ({
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <Cpu className={`w-3.5 h-3.5 ${isSelected ? 'text-sky-400' : 'text-slate-500'}`} />
-                    <span className="text-xs font-medium">{agent.name}</span>
+                    <span className="text-xs font-normal">{agent.name}</span>
                   </div>
                   <span className="text-[10px] font-mono text-emerald-400">
                     {agent.confidence}%

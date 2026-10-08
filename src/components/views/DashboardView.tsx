@@ -16,7 +16,8 @@ import {
   Square,
   Sparkles,
   Info,
-  BookOpen
+  BookOpen,
+  Palette
 } from 'lucide-react';
 import { LanguageCode, WorkflowPhase } from '../../types';
 import {
@@ -267,7 +268,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
           <div>
             <div className="flex items-center gap-2">
-              <span className="text-xs text-slate-100 font-medium">
+              <span className="text-xs text-slate-100 font-normal">
                 {isRtl ? 'المهندس أحمد الغامدي (الذكاء الاصطناعي لحفر أرامكو)' : 'Eng. Ahmad Al-Ghamdi (Aramco Lead Drilling AI)'}
               </span>
               <span className="text-[10px] px-2 py-0.2 rounded bg-emerald-950/60 text-emerald-300 border border-emerald-800/40 font-mono">
@@ -316,6 +317,15 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           >
             <BookOpen className="w-3 h-3" />
             <span>{isRtl ? 'دليل الاستخدام الصوتي' : 'Audio User Guide'}</span>
+          </button>
+
+          <button
+            onClick={() => onNavigate('theme-guide')}
+            className="btn-accent-gold px-2.5 py-1 text-xs flex items-center gap-1.5"
+            title="Open Web-Ready Theme Specification (13 Elements)"
+          >
+            <Palette className="w-3 h-3" />
+            <span>{isRtl ? 'دليل السمة (13 عنصر)' : 'Theme Guide'}</span>
           </button>
         </div>
       </div>
@@ -469,7 +479,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div className="flex items-center justify-between pb-2 border-b border-sky-950/40">
           <div className="flex items-center gap-2">
             <Gauge className="w-4 h-4 text-emerald-400" />
-            <span className="text-xs text-slate-200 font-medium">
+            <span className="text-xs text-slate-200 font-normal">
               {isRtl ? 'المقاييس الدائرية لمراحل معالجة الحفر الـ 12 (اضغط لسماع الشرح الصوتي)' : 'The 12 Processing Step Radial Dial Meters (Click to Speak & Explain)'}
             </span>
           </div>
@@ -538,7 +548,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 </div>
 
                 {/* Stage Title */}
-                <div className="text-[10px] text-slate-200 truncate w-full mt-1 font-medium">
+                <div className="text-[10px] text-slate-200 truncate w-full mt-1 font-normal">
                   {isRtl ? stage.titleAr.replace(/^\d+\.\s*/, '') : stage.titleEn.replace(/^\d+\.\s*/, '')}
                 </div>
 
@@ -559,7 +569,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-slate-100 font-medium">
+                <span className="text-slate-100 font-normal">
                   {isRtl ? activeStageData.titleAr : activeStageData.titleEn}
                 </span>
                 <span className="text-[10px] text-slate-500 font-mono">
@@ -600,7 +610,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div className="flex items-center justify-between pb-2 border-b border-sky-950/40">
           <div className="flex items-center gap-2">
             <Activity className="w-4 h-4 text-sky-400" />
-            <span className="text-xs text-slate-200 font-medium">
+            <span className="text-xs text-slate-200 font-normal">
               {isRtl ? 'المخطط الهندسي التفاعلي لمسار تدفق القرارات والبيانات' : 'Interactive End-to-End Drilling Decision Flow Diagram'}
             </span>
           </div>
@@ -736,7 +746,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 </div>
                 <div className="flex justify-between text-emerald-300 pt-1 border-t border-slate-800">
                   <span>Recommended Mud Weight:</span>
-                  <span className="font-mono font-medium">1.36 sg (11.35 ppg)</span>
+                  <span className="font-mono font-normal">1.36 sg (11.35 ppg)</span>
                 </div>
               </div>
 

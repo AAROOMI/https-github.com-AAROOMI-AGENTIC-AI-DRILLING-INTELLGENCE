@@ -8,7 +8,8 @@ import {
   CloudOff,
   CheckCircle2,
   Volume2,
-  BookOpen
+  BookOpen,
+  Palette
 } from 'lucide-react';
 import { LanguageCode } from '../types';
 import { CustomVoiceService } from '../services/voice/CustomVoiceService';
@@ -22,6 +23,7 @@ interface HeaderProps {
   onToggleAirGapped: (enabled: boolean) => void;
   activeWellName: string;
   onOpenUserGuide?: () => void;
+  onOpenThemeGuide?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -30,7 +32,8 @@ export const Header: React.FC<HeaderProps> = ({
   airGapped,
   onToggleAirGapped,
   activeWellName,
-  onOpenUserGuide
+  onOpenUserGuide,
+  onOpenThemeGuide
 }) => {
   const isRtl = currentLanguage === 'ar' || currentLanguage === 'ar-najdi';
   const voiceConfig = CustomVoiceService.getConfig();
@@ -133,6 +136,18 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <BookOpen className="w-3.5 h-3.5 text-emerald-400" />
             <span className="text-[11px] hidden md:inline">{isRtl ? 'دليل الاستخدام الصوتي' : 'Audio User Guide'}</span>
+          </button>
+        )}
+
+        {/* Web-Ready Theme Specification Guide Button */}
+        {onOpenThemeGuide && (
+          <button
+            onClick={onOpenThemeGuide}
+            title="Open Web-Ready Theme Specification & Style Guide"
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-amber-950/60 border border-amber-700/50 hover:bg-amber-900/60 text-amber-300 transition-colors"
+          >
+            <Palette className="w-3.5 h-3.5 text-amber-400" />
+            <span className="text-[11px] hidden lg:inline">{isRtl ? 'دليل السمة (13 عنصر)' : 'Theme Guide'}</span>
           </button>
         )}
 

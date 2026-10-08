@@ -17,7 +17,8 @@ import {
   BookOpen,
   Cpu,
   Mic2,
-  Settings
+  Settings,
+  Palette
 } from 'lucide-react';
 import { LanguageCode } from '../types';
 
@@ -25,6 +26,7 @@ export type NavViewId =
   | 'dashboard'
   | 'user-guide'
   | 'workflow'
+  | 'theme-guide'
   | 'data-collection'
   | 'data-validation'
   | 'historical-intelligence'
@@ -63,7 +65,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
       items: [
         { id: 'dashboard' as NavViewId, labelEn: 'Executive Dashboard', labelAr: 'لوحة القيادة التنفيذية', icon: LayoutDashboard },
         { id: 'user-guide' as NavViewId, labelEn: 'Audio-Visual User Guide', labelAr: 'دليل الاستخدام الصوتي المرئي', icon: BookOpen },
-        { id: 'workflow' as NavViewId, labelEn: '12-Phase Workflow', labelAr: 'مسار الحفر المعتمد (12 مرحلة)', icon: GitBranch }
+        { id: 'workflow' as NavViewId, labelEn: '12-Phase Workflow', labelAr: 'مسار الحفر المعتمد (12 مرحلة)', icon: GitBranch },
+        { id: 'theme-guide' as NavViewId, labelEn: 'Web-Ready Theme Guide', labelAr: 'دليل سمة التصميم (13 عنصر)', icon: Palette }
       ]
     },
     {

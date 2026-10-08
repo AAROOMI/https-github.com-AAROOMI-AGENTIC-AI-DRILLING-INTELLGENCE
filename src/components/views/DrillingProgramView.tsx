@@ -108,7 +108,7 @@ export const DrillingProgramView: React.FC<DrillingProgramViewProps> = ({
         <div className="flex justify-between items-start pb-4 border-b border-sky-950/60">
           <div>
             <div className="text-xs text-emerald-400 font-mono">SAUDI ARABIAN OIL COMPANY (ARAMCO)</div>
-            <div className="text-sm text-slate-100 font-medium mt-0.5">DRILLING & WORKOVER ENGINEERING DEPARTMENT</div>
+            <div className="text-sm text-slate-100 font-normal mt-0.5">DRILLING & WORKOVER ENGINEERING DEPARTMENT</div>
             <div className="text-[11px] text-slate-400 mt-1">Official Drilling Program • Document No: DP-2026-GHWR-102-R1</div>
           </div>
           <div className="text-right text-xs font-mono">
@@ -220,7 +220,7 @@ export const DrillingProgramView: React.FC<DrillingProgramViewProps> = ({
         <div className="pt-4 border-t border-sky-950/60 grid grid-cols-2 gap-4 text-xs">
           <div className="p-3 rounded bg-slate-900/40 border border-slate-800/50">
             <div className="text-[10px] text-slate-500">Lead Drilling Engineer:</div>
-            <div className="text-slate-200 font-medium mt-1">Ahmad Al-Ghamdi (KSA-ENG-4912)</div>
+            <div className="text-slate-200 font-normal mt-1">Ahmad Al-Ghamdi (KSA-ENG-4912)</div>
             <div className="text-[10px] text-emerald-400 font-mono mt-1">Formal Sign-off Verified • 2026-10-06</div>
           </div>
           <div className="p-3 rounded bg-slate-900/40 border border-slate-800/50">

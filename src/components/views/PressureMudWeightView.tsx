@@ -160,7 +160,7 @@ export const PressureMudWeightView: React.FC<PressureMudWeightViewProps> = ({
                 ? 'bg-emerald-950/30 border-emerald-800/50 text-slate-200'
                 : 'bg-rose-950/30 border-rose-800/50 text-rose-200'
             }`}>
-              <div className="flex items-center gap-1.5 font-medium">
+              <div className="flex items-center gap-1.5 font-normal">
                 {isSafeWindow ? (
                   <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                 ) : (

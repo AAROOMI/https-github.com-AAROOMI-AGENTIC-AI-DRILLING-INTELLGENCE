@@ -60,7 +60,7 @@ export class ErrorBoundary extends Component<Props, State> {
               <AlertTriangle className="w-5 h-5" />
             </div>
             <div>
-              <div className="text-sm font-medium text-slate-100">
+              <div className="text-sm font-normal text-slate-100">
                 Engineering Workspace Reset
               </div>
               <div className="text-xs text-slate-400 mt-1 leading-relaxed">

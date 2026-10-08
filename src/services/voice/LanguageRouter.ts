@@ -19,6 +19,7 @@ export class CentralLanguageRouter {
     options: {
       agentName: string;
       language: LanguageCode;
+      geminiVoiceName?: 'Charon' | 'Fenrir' | 'Puck';
       onStart?: () => void;
       onEnd?: () => void;
       onError?: (err: Error) => void;
@@ -35,6 +36,7 @@ export class CentralLanguageRouter {
     return await CustomVoiceService.speak(text, {
       agentName: options.agentName,
       language: options.language,
+      geminiVoiceName: options.geminiVoiceName,
       onStart: options.onStart,
       onEnd: options.onEnd,
       onError: options.onError

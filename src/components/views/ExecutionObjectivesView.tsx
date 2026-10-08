@@ -33,7 +33,7 @@ export const ExecutionObjectivesView: React.FC<ExecutionObjectivesViewProps> = (
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
         {/* Subsurface Target Coordinate Box */}
         <div className="p-4 rounded bg-[#08101e] border border-sky-950/60 space-y-3">
-          <div className="flex items-center gap-2 pb-2 border-b border-sky-950/40 text-slate-200 font-medium">
+          <div className="flex items-center gap-2 pb-2 border-b border-sky-950/40 text-slate-200 font-normal">
             <Target className="w-4 h-4 text-emerald-400" />
             <span>Target Reservoir Entry Parameters</span>
           </div>
@@ -41,7 +41,7 @@ export const ExecutionObjectivesView: React.FC<ExecutionObjectivesViewProps> = (
           <div className="space-y-2 text-[11px]">
             <div className="flex justify-between p-2 rounded bg-slate-900/60 border border-slate-800/60">
               <span className="text-slate-400">Target Formation Top:</span>
-              <span className="text-slate-200 font-medium">Arab-D Carbonate (Jurassic)</span>
+              <span className="text-slate-200 font-normal">Arab-D Carbonate (Jurassic)</span>
             </div>
             <div className="flex justify-between p-2 rounded bg-slate-900/60 border border-slate-800/60">
               <span className="text-slate-400">Target TVD Depth:</span>
@@ -64,7 +64,7 @@ export const ExecutionObjectivesView: React.FC<ExecutionObjectivesViewProps> = (
 
         {/* Drainage & Production Objectives */}
         <div className="p-4 rounded bg-[#08101e] border border-sky-950/60 space-y-3">
-          <div className="flex items-center gap-2 pb-2 border-b border-sky-950/40 text-slate-200 font-medium">
+          <div className="flex items-center gap-2 pb-2 border-b border-sky-950/40 text-slate-200 font-normal">
             <Compass className="w-4 h-4 text-sky-400" />
             <span>Reservoir Contact & Completion Goals</span>
           </div>

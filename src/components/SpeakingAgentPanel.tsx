@@ -246,7 +246,7 @@ export const SpeakingAgentPanel: React.FC<SpeakingAgentPanelProps> = ({
 
         {/* Custom Voice Identity Specification */}
         <div className="mt-2 text-center text-[10px] text-slate-400 max-w-[90%]">
-          <div className="text-slate-200 font-medium">{isRtl ? 'المهندس أحمد الغامدي' : 'Eng. Ahmad Al-Ghamdi'}</div>
+          <div className="text-slate-200 font-normal">{isRtl ? 'المهندس أحمد الغامدي' : 'Eng. Ahmad Al-Ghamdi'}</div>
           <div className="text-cyan-400 text-[9px] truncate">{voiceConfig.speakerIdentity}</div>
         </div>
 

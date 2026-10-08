@@ -1,5 +1,65 @@
 @import "tailwindcss";
 
+:root {
+  /* 1. Primary background */
+  --theme-bg-primary: #060b13;
+  --theme-bg-primary-surface: #080f1a;
+  --theme-bg-primary-deep: #04070c;
+  --theme-bg-primary-canvas: #0a1220;
+
+  /* 2. Secondary background */
+  --theme-bg-secondary: #0d1726;
+  --theme-bg-secondary-elevated: #111e32;
+  --theme-bg-secondary-muted: #0a1322;
+  --theme-bg-secondary-sidebar: #070d18;
+
+  /* 3. Primary/secondary green */
+  --theme-green-primary: #00843D;
+  --theme-green-primary-hover: #059669;
+  --theme-green-primary-subtle: #064e3b;
+  --theme-green-secondary: #10B981;
+  --theme-green-secondary-mint: #34D399;
+  --theme-green-secondary-dark: #022c22;
+
+  /* 4. Gold/yellow accent */
+  --theme-gold-accent: #EAA824;
+  --theme-gold-light: #FBBF24;
+  --theme-gold-subtle: #78350F;
+  --theme-gold-muted: #B45309;
+  --theme-yellow-energy: #FACC15;
+
+  /* 5. Dark text */
+  --theme-text-dark-primary: #060d17;
+  --theme-text-dark-secondary: #0f172a;
+  --theme-text-dark-muted: #334155;
+  --theme-text-on-gold: #030712;
+
+  /* 6. Light text */
+  --theme-text-light-primary: #F8FAFC;
+  --theme-text-light-secondary: #CBD5E1;
+  --theme-text-light-muted: #94A3B8;
+  --theme-text-light-caption: #64748B;
+
+  /* 7. Cards/panels */
+  --theme-card-bg: #0c1524;
+  --theme-card-bg-elevated: #101d30;
+  --theme-card-border: rgba(56, 189, 248, 0.12);
+
+  /* 8. Borders/dividers */
+  --theme-border-subtle: rgba(56, 189, 248, 0.10);
+  --theme-border-standard: rgba(56, 189, 248, 0.20);
+  --theme-border-green: rgba(16, 185, 129, 0.40);
+  --theme-border-gold: rgba(234, 168, 36, 0.40);
+  --theme-divider-hairline: rgba(51, 65, 85, 0.35);
+
+  /* 10. Status colors */
+  --theme-status-success: #10B981;
+  --theme-status-warning: #F59E0B;
+  --theme-status-danger: #EF4444;
+  --theme-status-info: #0EA5E9;
+  --theme-status-neutral: #64748B;
+}
+
 @layer base {
   * {
     border-color: rgba(56, 189, 248, 0.12);
@@ -8,13 +68,13 @@
 
   body {
     font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: #060b13;
-    color: #cbd5e1;
+    background-color: var(--theme-bg-primary);
+    color: var(--theme-text-light-secondary);
     overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-weight: 500 !important; /* Refined, non-bold heading weight */
+    font-weight: 400 !important; /* Strict normal font weight */
     letter-spacing: -0.01em;
   }
 
@@ -26,6 +86,77 @@
   [dir="rtl"] {
     font-family: 'Tajawal', 'IBM Plex Sans', sans-serif;
   }
+}
+
+/* 7. Cards & Panels Utilities */
+.theme-card {
+  background-color: var(--theme-card-bg);
+  border: 1px solid var(--theme-card-border);
+  border-radius: 0.375rem;
+}
+
+.theme-card-elevated {
+  background-color: var(--theme-card-bg-elevated);
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  border-radius: 0.375rem;
+}
+
+/* 9. Buttons Utilities */
+.btn-primary-green {
+  background-color: var(--theme-green-primary);
+  color: #ffffff;
+  border-radius: 0.25rem;
+  transition: all 150ms ease-in-out;
+}
+.btn-primary-green:hover {
+  background-color: var(--theme-green-primary-hover);
+}
+
+.btn-secondary-outline {
+  background-color: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.45);
+  color: #34d399;
+  border-radius: 0.25rem;
+  transition: all 150ms ease-in-out;
+}
+.btn-secondary-outline:hover {
+  background-color: rgba(16, 185, 129, 0.18);
+}
+
+.btn-accent-gold {
+  background-color: var(--theme-gold-accent);
+  color: var(--theme-text-on-gold);
+  border-radius: 0.25rem;
+  transition: all 150ms ease-in-out;
+}
+.btn-accent-gold:hover {
+  background-color: var(--theme-gold-light);
+}
+
+/* 12. Gradients Utilities */
+.gradient-aramco-brand {
+  background: linear-gradient(135deg, #00843D 0%, #0284c7 100%);
+}
+
+.gradient-gold-sheen {
+  background: linear-gradient(135deg, #d97706 0%, #eaa824 50%, #fbbf24 100%);
+}
+
+.gradient-dark-canvas {
+  background: radial-gradient(circle at 50% 20%, #0d1726 0%, #060b13 85%);
+}
+
+/* 13. Hover / Active Micro-States */
+.theme-interactive-item {
+  transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+.theme-interactive-item:hover {
+  background-color: rgba(19, 35, 58, 0.65);
+}
+.theme-interactive-item.active {
+  background-color: rgba(6, 78, 59, 0.35);
+  border-color: rgba(16, 185, 129, 0.55);
+  color: #6ee7b7;
 }
 
 /* Custom technical scrollbar */

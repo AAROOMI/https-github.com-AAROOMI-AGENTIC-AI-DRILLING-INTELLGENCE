@@ -52,7 +52,7 @@ export const OngoingIntelligenceView: React.FC<OngoingIntelligenceViewProps> = (
             <div className="text-[10px] text-slate-500 truncate">{m.label}</div>
             <div className="text-sm font-mono text-slate-100">{m.value}</div>
             <div className="flex justify-between items-center text-[10px] pt-1 border-t border-slate-800/50">
-              <span className="text-emerald-400 font-medium">{m.status}</span>
+              <span className="text-emerald-400 font-normal">{m.status}</span>
               <span className="text-slate-500 font-mono">{m.delta}</span>
             </div>
           </div>
@@ -62,7 +62,7 @@ export const OngoingIntelligenceView: React.FC<OngoingIntelligenceViewProps> = (
       {/* Morning Report Summary Box */}
       <div className="p-4 rounded bg-[#08101e] border border-sky-950/60 space-y-2 text-xs">
         <div className="flex items-center justify-between pb-2 border-b border-sky-950/40">
-          <span className="text-slate-200 font-medium">Daily Morning Report (DMR-01) Summary</span>
+          <span className="text-slate-200 font-normal">Daily Morning Report (DMR-01) Summary</span>
           <span className="text-[10px] font-mono text-slate-400">Date: 2026-10-06 06:00 HRS</span>
         </div>
         <p className="text-[11px] text-slate-300 leading-relaxed">

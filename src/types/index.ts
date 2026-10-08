@@ -188,7 +188,14 @@ export interface VoiceProfileConfig {
   pitchBaseHz: number; // e.g. 115 Hz
   speakingRate: number; // 0.9 - 1.2
   timbreProfile: 'Saudi Male (Najdi Accent)' | 'Aramco Executive Lead';
-  provider: 'Local-Neural-Cloner' | 'ElevenLabs-Clone' | 'XTTS-v2-Local' | 'Coqui-Engine';
+  provider:
+    | 'Google-Gemini-Natural-TTS'
+    | 'Google-Gemini-Natural-TTS (Charon Male / Saudi Najdi)'
+    | 'Local-Neural-Cloner'
+    | 'ElevenLabs-Clone'
+    | 'XTTS-v2-Local'
+    | 'Coqui-Engine'
+    | string;
   isServiceAvailable: boolean;
   lastCalibratedAt?: string;
   sampleSnippets: {

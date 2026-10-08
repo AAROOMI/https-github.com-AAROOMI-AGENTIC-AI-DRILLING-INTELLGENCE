@@ -97,7 +97,7 @@ export const KnowledgeBaseView: React.FC<KnowledgeBaseViewProps> = ({
             <>
               {/* AI Inference Summary */}
               <div className="p-3.5 rounded bg-[#08101e] border border-sky-950/60 space-y-2 text-xs">
-                <div className="flex items-center gap-2 text-slate-200 font-medium">
+                <div className="flex items-center gap-2 text-slate-200 font-normal">
                   <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
                   <span>Synthesized Engineering Inference:</span>
                 </div>
@@ -118,7 +118,7 @@ export const KnowledgeBaseView: React.FC<KnowledgeBaseViewProps> = ({
                     className="p-3 rounded bg-[#08101e] border border-sky-950/60 space-y-1.5 text-xs"
                   >
                     <div className="flex items-center justify-between">
-                      <span className="text-sky-300 font-medium truncate max-w-[80%]">
+                      <span className="text-sky-300 font-normal truncate max-w-[80%]">
                         {chk.docTitle}
                       </span>
                       <span className="text-[10px] text-emerald-400 font-mono">
@@ -150,7 +150,7 @@ export const KnowledgeBaseView: React.FC<KnowledgeBaseViewProps> = ({
                 className="p-2.5 rounded bg-slate-900/60 border border-slate-800/60 space-y-1"
               >
                 <div className="flex items-center justify-between">
-                  <span className="text-slate-200 font-medium truncate max-w-[70%]">
+                  <span className="text-slate-200 font-normal truncate max-w-[70%]">
                     {doc.title}
                   </span>
                   <span className="px-1.5 py-0.2 rounded bg-sky-950/80 text-sky-300 text-[10px] font-mono">
