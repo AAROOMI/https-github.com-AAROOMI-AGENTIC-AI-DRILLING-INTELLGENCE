@@ -203,17 +203,20 @@ export const SpeakingAgentPanel: React.FC<SpeakingAgentPanelProps> = ({
         <div className="relative">
           {/* Avatar Ring */}
           <div
-            className={`w-20 h-20 rounded-full p-1 border transition-all duration-300 ${
+            className={`w-20 h-20 rounded-full p-0.5 border-2 transition-all duration-300 ${
               isSpeaking
-                ? 'border-emerald-400 shadow-[0_0_18px_rgba(16,185,129,0.35)] scale-105'
-                : 'border-sky-800/60'
-            } bg-slate-900 flex items-center justify-center`}
+                ? 'border-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.45)] scale-105'
+                : 'border-sky-700/60'
+            } bg-slate-900 flex items-center justify-center overflow-hidden`}
           >
-            {/* Synthetic Engineer Avatar Graphic */}
-            <div className="w-full h-full rounded-full overflow-hidden bg-gradient-to-tr from-slate-900 via-sky-950 to-emerald-950 flex flex-col items-center justify-center text-center p-1">
-              <span className="text-[10px] text-emerald-300">Aramco Lead</span>
-              <span className="text-[9px] text-slate-400">Drilling AI</span>
-            </div>
+            <img
+              src="/aramco_engineer.jpg"
+              alt="Aramco Lead Drilling AI Agent"
+              className="w-full h-full object-cover rounded-full"
+              onError={(e) => {
+                (e.target as HTMLElement).style.display = 'none';
+              }}
+            />
           </div>
 
           {/* Active Speaking Indicator */}
@@ -242,9 +245,26 @@ export const SpeakingAgentPanel: React.FC<SpeakingAgentPanelProps> = ({
         </div>
 
         {/* Custom Voice Identity Specification */}
-        <div className="mt-2 text-center text-[10px] text-slate-400 max-w-[90%] truncate">
-          <span className="text-cyan-400">{voiceConfig.speakerIdentity}</span>
+        <div className="mt-2 text-center text-[10px] text-slate-400 max-w-[90%]">
+          <div className="text-slate-200 font-medium">{isRtl ? 'المهندس أحمد الغامدي' : 'Eng. Ahmad Al-Ghamdi'}</div>
+          <div className="text-cyan-400 text-[9px] truncate">{voiceConfig.speakerIdentity}</div>
         </div>
+
+        {/* Original Authentic Sample Play Button */}
+        <button
+          onClick={() => {
+            const sampleText = 'السلام عليكم متابعينا الكرام، الله يمسّيكم بالخير. معك المهندس أحمد الغامدي من الذكاء الاصطناعي لحفر أرامكو. نصيحتي الهندسية للبئر 102: تم تدقيق كافة مقاطع الأغلفة ووزن طين الحفر 1.36 غرام/سم مكعب، ونوصي باعتماد تصميم K-2 مع التوجيه الدقيق لمكمن العرب دي.';
+            CentralLanguageRouter.routeAndSpeak(sampleText, {
+              agentName: 'Aramco Lead Drilling AI Agent (Verified Sample)',
+              language: 'ar-najdi'
+            });
+          }}
+          className="mt-2 px-2.5 py-1 rounded bg-slate-900 border border-cyan-800/50 hover:bg-slate-800 text-cyan-300 text-[10px] flex items-center gap-1 transition-colors"
+          title="Play authentic Saudi voice sample"
+        >
+          <Volume2 className="w-3 h-3 text-cyan-400" />
+          <span>{isRtl ? 'تشغيل عيّنة الصوت الأصلية' : 'Play Authentic Voice Sample'}</span>
+        </button>
 
         {/* Stop Speaking Button */}
         {isSpeaking && (

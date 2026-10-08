@@ -23,6 +23,7 @@ import { LanguageCode } from '../types';
 
 export type NavViewId =
   | 'dashboard'
+  | 'user-guide'
   | 'workflow'
   | 'data-collection'
   | 'data-validation'
@@ -61,6 +62,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       titleAr: 'التحكم ومسار العمليات',
       items: [
         { id: 'dashboard' as NavViewId, labelEn: 'Executive Dashboard', labelAr: 'لوحة القيادة التنفيذية', icon: LayoutDashboard },
+        { id: 'user-guide' as NavViewId, labelEn: 'Audio-Visual User Guide', labelAr: 'دليل الاستخدام الصوتي المرئي', icon: BookOpen },
         { id: 'workflow' as NavViewId, labelEn: '12-Phase Workflow', labelAr: 'مسار الحفر المعتمد (12 مرحلة)', icon: GitBranch }
       ]
     },

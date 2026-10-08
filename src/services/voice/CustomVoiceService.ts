@@ -49,9 +49,9 @@ class CentralCustomVoiceService {
     isServiceAvailable: true,
     lastCalibratedAt: new Date().toISOString(),
     sampleSnippets: {
-      en: 'The recommended mud weight for the 12-1/4 inch section is 11.3 ppg based on Arab-D pore pressure estimation.',
-      ar: 'يوصى بوزن طين الحفر البالغ 1.36 غرام/سم مكعب لمقطع 12 وربع بوصة وفقاً لتقديرات ضغط المسام لمكمن العرب دي.',
-      najdi: 'يا هلا بك، وزن الطين المطلوب لمقطع اثناعش وربع بوصة هو حداشر فاصلة ثلاثة باوند، والمؤشرات ممتازة لتفادي مشاكل الحفر.'
+      en: 'Welcome, Lead Engineer. Operational parameters for Well-102 have been benchmarked against Ghawar Arab-D offset wells. Recommended profile is K-2 with 11.3 ppg mud weight. Ready to assist with technical analysis or approval review.',
+      ar: 'السلام عليكم ورحمة الله، أهلاً بكم. تم تحليل كافة معطيات البئر 102 ومقارنتها بالآبار المجاورة في مكمن العرب دي. التصميم الموصى به هو K-2 بوزن طين 1.36 غرام/سم³. جاهز للإجابة على استفساراتكم أو إعداد وثيقة الاعتماد.',
+      najdi: 'السلام عليكم متابعينا الكرام، الله يمسّيكم بالخير. معك المهندس أحمد الغامدي من الذكاء الاصطناعي لحفر أرامكو. نصيحتي الهندسية للبئر 102: تم تدقيق كافة مقاطع الأغلفة ووزن طين الحفر 1.36 غرام/سم مكعب، ونوصي باعتماد تصميم K-2 مع التوجيه الدقيق لمكمن العرب دي.'
     }
   };
 

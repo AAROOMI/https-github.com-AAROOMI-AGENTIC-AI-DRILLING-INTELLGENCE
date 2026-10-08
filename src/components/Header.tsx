@@ -7,7 +7,8 @@ import {
   Database,
   CloudOff,
   CheckCircle2,
-  Volume2
+  Volume2,
+  BookOpen
 } from 'lucide-react';
 import { LanguageCode } from '../types';
 import { CustomVoiceService } from '../services/voice/CustomVoiceService';
@@ -20,6 +21,7 @@ interface HeaderProps {
   airGapped: boolean;
   onToggleAirGapped: (enabled: boolean) => void;
   activeWellName: string;
+  onOpenUserGuide?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -27,7 +29,8 @@ export const Header: React.FC<HeaderProps> = ({
   onLanguageChange,
   airGapped,
   onToggleAirGapped,
-  activeWellName
+  activeWellName,
+  onOpenUserGuide
 }) => {
   const isRtl = currentLanguage === 'ar' || currentLanguage === 'ar-najdi';
   const voiceConfig = CustomVoiceService.getConfig();
@@ -120,6 +123,18 @@ export const Header: React.FC<HeaderProps> = ({
           <Volume2 className="w-3.5 h-3.5 text-cyan-400" />
           <span className="text-[11px] hidden sm:inline">My Voice: Cloned</span>
         </div>
+
+        {/* Audio-Visual User Guide Trigger Button */}
+        {onOpenUserGuide && (
+          <button
+            onClick={onOpenUserGuide}
+            title="Open Audio-Visual User Guide"
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded bg-emerald-950/70 border border-emerald-700/60 hover:bg-emerald-900/60 text-emerald-300 transition-colors"
+          >
+            <BookOpen className="w-3.5 h-3.5 text-emerald-400" />
+            <span className="text-[11px] hidden md:inline">{isRtl ? 'دليل الاستخدام الصوتي' : 'Audio User Guide'}</span>
+          </button>
+        )}
 
         {/* Language Switcher */}
         <div className="flex items-center bg-slate-900/80 border border-slate-700/50 rounded p-0.5">

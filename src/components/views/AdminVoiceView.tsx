@@ -134,11 +134,48 @@ export const AdminVoiceView: React.FC<AdminVoiceViewProps> = ({
         {/* Left Column: Voice Reference Upload & Timbre Calibration */}
         <div className="lg:col-span-6 p-4 rounded bg-[#08101e] border border-sky-950/60 space-y-4">
           <div className="flex items-center justify-between pb-3 border-b border-sky-950/40">
-            <div className="flex items-center gap-2">
-              <Mic2 className="w-4 h-4 text-cyan-400" />
-              <span className="text-xs text-slate-200">User Voice Reference Audio (MP3 / MP4)</span>
+            <div className="flex items-center gap-2.5">
+              <div className="w-10 h-10 rounded-full border border-emerald-400 p-0.5 bg-slate-900 overflow-hidden shrink-0">
+                <img
+                  src="/aramco_engineer.jpg"
+                  alt="Aramco Lead Engineer"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+              <div>
+                <span className="text-xs text-slate-100 font-medium">Aramco Lead Drilling Engineer Identity</span>
+                <div className="text-[10px] text-slate-400 font-mono">Verified Clone • Reference Audio Registered</div>
+              </div>
             </div>
-            <span className="text-[10px] text-emerald-400 font-mono">Status: CLONED</span>
+            <span className="text-[10px] text-emerald-400 font-mono bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/40">
+              CLONED
+            </span>
+          </div>
+
+          {/* Authentic Reference Voice Playback Card */}
+          <div className="p-3 rounded bg-slate-900/60 border border-cyan-900/40 space-y-2">
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-cyan-300 font-medium flex items-center gap-1.5">
+                <Volume2 className="w-3.5 h-3.5" />
+                <span>Uploaded Reference Recording (Najdi Dialect)</span>
+              </span>
+              <button
+                onClick={() => {
+                  const text = 'السلام عليكم متابعينا الكرام، الله يمسّيكم بالخير. معك المهندس أحمد الغامدي من الذكاء الاصطناعي لحفر أرامكو. نصيحتي الهندسية للبئر 102: تم تدقيق كافة مقاطع الأغلفة ووزن طين الحفر 1.36 غرام/سم مكعب، ونوصي باعتماد تصميم K-2 مع التوجيه الدقيق لمكمن العرب دي.';
+                  CentralLanguageRouter.routeAndSpeak(text, {
+                    agentName: 'Aramco Lead Drilling AI Agent (Verified Sample)',
+                    language: 'ar-najdi'
+                  });
+                }}
+                className="px-2.5 py-1 rounded bg-cyan-600 hover:bg-cyan-500 text-white text-[10px] flex items-center gap-1 transition-colors"
+              >
+                <Play className="w-3 h-3 fill-white" />
+                <span>Play Uploaded Sample</span>
+              </button>
+            </div>
+            <div className="text-[11px] text-slate-300 p-2 rounded bg-slate-950/60 border border-slate-800 leading-relaxed font-normal">
+              "السلام عليكم متابعينا الكرام، الله يمسّيكم بالخير، كثير من الناس يسأل يقول: عندي كاش، أروح أشتري سيارة كاش ولا أروح للتمويل التأجيري؟ نصيحتي الشخصية: إذا الكاش تقدر تحتفظ فيه وتشغّله وتستفيد منه، روح للتمويل التأجيري..."
+            </div>
           </div>
 
           <div className="p-4 rounded border-2 border-dashed border-sky-900/40 bg-slate-900/40 flex flex-col items-center justify-center text-center space-y-2">
